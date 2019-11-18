@@ -1,18 +1,9 @@
 os: linux
 sudo: required
-language:
-- minimal
-services:
-- docker
+language: cpp
 
-jobs:
-  include:
-  - name: "coverage"
-    script:
-    - docker run -v `pwd`:`pwd` -w `pwd` -t rusdevops/bootstrap-cpp scripts/coverage.sh
-  - name: "tests"
-    script:
-    - docker run -v `pwd`:`pwd` -w `pwd` -t rusdevops/bootstrap-cpp scripts/tests.sh
+script:
+	- ./tests
 
 notifications:
     email: false
