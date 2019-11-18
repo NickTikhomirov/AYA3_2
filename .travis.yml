@@ -3,7 +3,7 @@ sudo: required
 language: cpp
 
 script:
-	- ./tests
+  - ./tests
 
 notifications:
     email: false
