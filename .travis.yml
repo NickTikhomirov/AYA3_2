@@ -1,14 +1,29 @@
-os: linux
-sudo: required
+sudo: false
+
 language: cpp
-compiler: gcc
+
+compiler:
+  -gcc
+
+before_install:
+  - pip install --user cpp-coveralls
 
 install:
-  - cmake -H. -B.build
-  - cmake --build .
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-8" CC="gcc-8"; fi
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
+
+node_js:
+  - 8
 
 script:
   - ./tests
 
-notifications:
-    email: false
+addons:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-8
+      - g++-8
