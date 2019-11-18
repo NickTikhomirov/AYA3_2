@@ -1,6 +1,11 @@
 os: linux
 sudo: required
 language: cpp
+compiler: gcc
+
+install:
+  - cmake -H. -B.build
+  - cmake --build .
 
 script:
   - ./tests
