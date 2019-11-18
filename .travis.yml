@@ -1,19 +1,18 @@
-sudo: true
+os: linux
+sudo: required
+language:
+- minimal
+services:
+- docker
 
-language: cpp
+jobs:
+  include:
+  - name: "coverage"
+    script:
+    - docker run -v `pwd`:`pwd` -w `pwd` -t rusdevops/bootstrap-cpp scripts/coverage.sh
+  - name: "tests"
+    script:
+    - docker run -v `pwd`:`pwd` -w `pwd` -t rusdevops/bootstrap-cpp scripts/tests.sh
 
-compiler:
-  -gcc
-
-before_install:
-  - pip install --user cpp-coveralls
-
-install:
-  - if [ "$CXX" = "g++" ]; then export CXX="g++-8" CC="gcc-8"; fi
-  - mkdir build
-  - cd build
-  - cmake ..
-  - make
-
-script:
-  - ./tests
+notifications:
+    email: false
