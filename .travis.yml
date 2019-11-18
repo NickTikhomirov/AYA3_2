@@ -9,14 +9,13 @@ before_install:
   - pip install --user cpp-coveralls
 
 install:
-  - if [ "$CXX" = "g++" ]; then export CXX="g++-8" CC="gcc-8"; fi
   - mkdir build
   - cd build
   - cmake ..
   - make
 
 script:
-  - ctest -V
+  - ./tests
 
 addons:
   apt:
