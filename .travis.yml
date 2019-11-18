@@ -1,7 +1,9 @@
-os: linux
-sudo: required
+sudo: false
+
 language: cpp
-compiler: gcc
+
+compiler:
+  -gcc
 
 before_install:
   - pip install --user cpp-coveralls
@@ -23,7 +25,3 @@ addons:
     packages:
       - gcc-8
       - g++-8
-
-
-notifications:
-    email: false
