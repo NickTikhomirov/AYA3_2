@@ -9,17 +9,11 @@ before_install:
   - pip install --user cpp-coveralls
 
 install:
-  - if [ "$CXX" = "g++" ]; then export CXX="g++-8" CC="gcc-8"; fi
-  - mkdir build
-  - cd build
-  - cmake ..
-  - make
-
-node_js:
-  - 8
+  - cmake -H. -B.build
+  - cmake —build .
 
 script:
-  - ./tests
+  - ./.build/tests	
 
 addons:
     sources:
