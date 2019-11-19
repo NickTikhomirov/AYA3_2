@@ -10,7 +10,7 @@ before_install:
 
 install:
   - cmake -H. -B.build
-  - cmake —build .
+  - cmake --build .
 
 script:
   - ./.build/tests	
