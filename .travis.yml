@@ -13,7 +13,7 @@ install:
   - cmake --build .build
 
 script:
-  - ./.build/tests	
+  - ./.build/tests
 
 addons:
     sources:

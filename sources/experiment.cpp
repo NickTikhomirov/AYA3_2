@@ -31,12 +31,7 @@ vector<int> experiment::prepareForRandom() {
 }
 
 void experiment::perform(dir d) {
-  
-  string s= "    Style: ";
-  clock_t t1=0, t2=0;
-  if(d == straight) s+= "straight";
-  else if(d == backwards) s+= "backwards";
-  else s+= "random";
+  clock_t t1 = 0, t2 = 0;
   switch (d) {
   case straight: {
 	  int temp = 0;
@@ -74,8 +69,7 @@ void experiment::perform(dir d) {
   }
   }
   double result = double(t2-t1);
-  cout << "  attempts: " << 1000 << "\n";
-  cout << s << "\n";
-  cout << "    Length: " << length << "\n";
-  cout << "    Result (time): " << result << "\n\n";
+  cout << "  Experiments: " << 1000 << "\n";
+  cout << "  Length: " << length << "\n";
+  cout << "  Duration: " << result << "\n";
 }
