@@ -5,6 +5,7 @@
 #include <vector>
 
 using std::vector;
+using std::size_t;
 
 enum dir {
 	straight,
