@@ -6,9 +6,9 @@ using std::cout;
 using std::unordered_map;
 using std::string;
 
-void interpret(int i) {
+void interpret(size_t i) {
 	cout << "Size: ";
-	static unordered_map<int, string> interprets{
+	static unordered_map<size_t, string> interprets{
 		{0,"1/8"},
 		{1,"1/4"},
 		{2,"1/2"},
@@ -22,9 +22,9 @@ void interpret(int i) {
 }
 	
 int main() {
-  int amounts[7];
+  size_t amounts[7];
   amounts[0] = 1024 * 32;
-  for (int i = 1; i < 6; i++) {
+  for (size_t i = 1; i < 6; ++i) {
     amounts[i] = amounts[i - 1] * 2;
   }
   amounts[6] = amounts[4] * 3;
@@ -34,7 +34,7 @@ int main() {
 	  else if (d == backwards) s += "backwards";
 	  else s += "random";
 	  cout << s << "\n";
-	  for (int i = 0; i < 7; i++) {
+	  for (size_t i = 0; i < 7; ++i) {
 		  interpret(i);
 		  experiment ex(amounts[i]);
 		  ex.enwarm();

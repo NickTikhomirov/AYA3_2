@@ -13,11 +13,14 @@ enum dir {
 };
 
 class experiment {
-  int *array = nullptr;
-  int length = 0;
-  vector<int> prepareForRandom();
+  unsigned int *array = nullptr;
+  size_t length = 0;
+  vector<size_t> prepareForRandom();
+  void perform_straight();
+  void perform_backwards();
+  void perform_rand0m();
  public:
-  experiment(int);
+  experiment(size_t);
   void enwarm();
   void perform(dir);
 };
