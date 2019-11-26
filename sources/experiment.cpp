@@ -9,6 +9,7 @@ using std::clock_t;
 using std::vector;
 using std::cout;
 using std::string;
+using std::size_t;
 
 experiment::experiment(size_t a) {
   length = a;

@@ -5,6 +5,7 @@
 using std::cout;
 using std::unordered_map;
 using std::string;
+using std::size_t;
 
 void interpret(size_t i) {
 	cout << "Size: ";
